@@ -70,7 +70,7 @@ download_files_to_vm() {
 mssqlvm_home="${HOME}/.mssqlvm"
 
 log "Install WinXP and enable guest control"
-curl -s https://raw.github.com/xdissent/ievms/master/ievms.sh | REUSE_XP="yes" IEVMS_VERSIONS="7" INSTALL_PATH="${mssqlvm_home}" bash
+curl -s https://raw.githubusercontent.com/xdissent/ievms/master/ievms.sh | REUSE_XP="yes" IEVMS_VERSIONS="7" INSTALL_PATH="${mssqlvm_home}" bash
 
 # folder has been created by ievms
 cd "${mssqlvm_home}"
