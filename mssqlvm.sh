@@ -30,7 +30,7 @@ configure_host_only_nic() {
       exit 1
     fi
   else
-    echo "found adapter $adapter with IP $ip"
+    echo "found adapter $adapter with IP $ip"                                                  raw.githubusercontent.com
   fi
   
   VBoxManage modifyvm "${vm}" --nic2 hostonly
@@ -45,7 +45,7 @@ download_files_to_vm() {
   curl -L -O http://curl.haxx.se/gknw.net/7.29.0/dist-w32/curl-7.29.0-rtmp-ssh2-ssl-sspi-zlib-idn-static-bin-w32.zip
 
   log "Downloading mssql-setup.bat"
-  curl -L -O https://raw.github.com/twr/mssqlvm/master/mssql-setup.bat
+  curl -L -O https://raw.githubusercontent.com/emverh/mssqlvm/master/mssql-setup.bat
 
   log "Starting ${vm}"
   VBoxManage startvm "${vm}" --type headless
