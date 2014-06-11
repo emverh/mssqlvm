@@ -42,7 +42,7 @@ download_files_to_vm() {
   curl -L http://sourceforge.net/projects/sevenzip/files/7-Zip/9.22/7z922.exe/download -o 7z922.exe
 
   log "Downloading curl"
-  curl -L -O http://curl.haxx.se/gknw.net/7.29.0/dist-w32/curl-7.29.0-rtmp-ssh2-ssl-sspi-zlib-idn-static-bin-w32.zip
+  curl -L -O http://curl.haxx.se/gknw.net/7.30.0/dist-w32/curl-7.30.0-rtmp-ssh2-ssl-sspi-zlib-idn-static-bin-w32.zip
 
   log "Downloading mssql-setup.bat"
   curl -L -O https://raw.githubusercontent.com/emverh/mssqlvm/master/mssql-setup.bat
@@ -63,14 +63,14 @@ download_files_to_vm() {
 
   log "Copying files to the VM"
   VBoxManage guestcontrol "${vm}" cp `pwd`"/7z922.exe" "${guest_loc}/7z922.exe" --username ${username} --password ${password}
-  VBoxManage guestcontrol "${vm}" cp `pwd`"/curl-7.29.0-rtmp-ssh2-ssl-sspi-zlib-idn-static-bin-w32.zip" "${guest_loc}/curl-7.29.0-rtmp-ssh2-ssl-sspi-zlib-idn-static-bin-w32.zip" --username ${username} --password ${password}
+  VBoxManage guestcontrol "${vm}" cp `pwd`"/curl-7.30.0-rtmp-ssh2-ssl-sspi-zlib-idn-static-bin-w32.zip" "${guest_loc}/curl-7.30.0-rtmp-ssh2-ssl-sspi-zlib-idn-static-bin-w32.zip" --username ${username} --password ${password}
   VBoxManage guestcontrol "${vm}" cp `pwd`"/mssql-setup.bat" "${guest_loc}/mssql-setup.bat" --username ${username} --password ${password}
 }
 
 mssqlvm_home="${HOME}/.mssqlvm"
 
 log "Install WinXP and enable guest control"
-curl -s https://raw.githubusercontent.com/xdissent/ievms/master/ievms.sh | REUSE_XP="yes" IEVMS_VERSIONS="7" INSTALL_PATH="${mssqlvm_home}" bash
+curl -sL https://raw.githubusercontent.com/xdissent/ievms/master/ievms.sh | REUSE_XP="yes" IEVMS_VERSIONS="7" INSTALL_PATH="${mssqlvm_home}" bash
 
 # folder has been created by ievms
 cd "${mssqlvm_home}"

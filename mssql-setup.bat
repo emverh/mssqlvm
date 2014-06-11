@@ -10,15 +10,15 @@ set WORK_DIR=C:\mssql-setup
 mkdir %WORK_DIR%
 cd %WORK_DIR%
 
-set DESKTOP_DIR=%~p0
+set DESKTOP_DIR=C:\Documents and Settings\IEUser\Desktop\
 
 copy "%DESKTOP_DIR%7z922.exe" %WORK_DIR%\
-copy "%DESKTOP_DIR%curl-7.29.0-rtmp-ssh2-ssl-sspi-zlib-idn-static-bin-w32.zip" %WORK_DIR%\
+copy "%DESKTOP_DIR%curl-7.30.0-rtmp-ssh2-ssl-sspi-zlib-idn-static-bin-w32.zip" %WORK_DIR%\
 
 7z922.exe /S
-"%ProgramFiles%\7-Zip\7z.exe" x curl-7.29.0-rtmp-ssh2-ssl-sspi-zlib-idn-static-bin-w32.zip
+"%ProgramFiles%\7-Zip\7z.exe" x curl-7.30.0-rtmp-ssh2-ssl-sspi-zlib-idn-static-bin-w32.zip
 
-set "CURL_BIN=%WORK_DIR%\curl-7.29.0-rtmp-ssh2-ssl-sspi-zlib-idn-static-bin-w32"
+set "CURL_BIN=%WORK_DIR%\curl-7.30.0-rtmp-ssh2-ssl-sspi-zlib-idn-static-bin-w32"
 
 echo Downloading Microsoft .NET Framework Version 2.0 Redistributable Package (x86)
 %CURL_BIN%\curl -L -O http://download.microsoft.com/download/5/6/7/567758a3-759e-473e-bf8f-52154438565a/dotnetfx.exe
